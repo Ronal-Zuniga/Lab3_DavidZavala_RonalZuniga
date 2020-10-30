@@ -43,13 +43,25 @@ public class Cliente extends Persona {
         return "Cliente{" + "dinero=" + dinero + ", productos=" + productos + '}';
     }
 
-    public Cliente Clientesadd() {
+    public Cliente Clientesadd(ArrayList<Cliente> array) {
         System.out.println("Nombre: ");
         String nombre = read.next();
         System.out.println("Id: ");
         int id = read.nextInt();
-        System.out.println("User: ");
-        String u = read.next();
+        boolean tf = true;
+        String u = null;
+        while (tf == true) {
+            System.out.println("User: ");
+            u = read.next();
+            for (int i = 0; i < array.size(); i++) {
+                if (u.equals(array.get(i).getUser())) {
+                    System.out.println("Usuario no disponible");
+                } else {
+                    System.out.println("Usuario disponible");
+                    tf = false;
+                }
+            }
+        }
         System.out.println("Contraseña: ");
         String contraseña = read.next();
         System.out.println("Correo: ");
@@ -59,13 +71,26 @@ public class Cliente extends Persona {
         return new Cliente(money, nombre, id, u, contraseña, correo);
     }
 
-    public void Clientesmod(Cliente c) {
+    public void Clientesmod(Cliente c, ArrayList<Cliente> array) {
         System.out.println("Nombre: ");
         String nombre = read.next();
         System.out.println("Id: ");
         int id = read.nextInt();
         System.out.println("User: ");
-        String u = read.next();
+        boolean tf = true;
+        String u = null;
+        while (tf == true) {
+            System.out.println("User: ");
+            u = read.next();
+            for (int i = 0; i < array.size(); i++) {
+                if (u.equals(array.get(i).getUser())) {
+                    System.out.println("Usuario no disponible");
+                } else {
+                    System.out.println("Usuario disponible");
+                    tf = false;
+                }
+            }
+        }
         System.out.println("Contraseña: ");
         String contraseña = read.next();
         System.out.println("Correo: ");

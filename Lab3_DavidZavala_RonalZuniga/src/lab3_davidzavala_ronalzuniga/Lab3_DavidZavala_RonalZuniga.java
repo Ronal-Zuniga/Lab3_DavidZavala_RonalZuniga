@@ -10,7 +10,6 @@ public class Lab3_DavidZavala_RonalZuniga {
     //Clases instanceadas
     static Cliente C = new Cliente();
     //Araylists
-    static ArrayList<String> Usuarios = new ArrayList();
     static ArrayList<Local> LocalesAL = new ArrayList();
     static ArrayList<Empleado> EmpleadosAL = new ArrayList();
     static ArrayList<Cliente> ClientesAL = new ArrayList();
@@ -58,7 +57,7 @@ public class Lab3_DavidZavala_RonalZuniga {
                     break;
                 }
                 case 2: {
-                    ClientesAL.add(C.Clientesadd());
+                    ClientesAL.add(C.Clientesadd(ClientesAL));
                     break;
                 }
                 case 3: {
@@ -100,7 +99,6 @@ public class Lab3_DavidZavala_RonalZuniga {
                     break;
                 }
                 case 5: {
-
                     if (Sudo == true) {
                         System.out.println("A. Locales");
                         System.out.println("B. Personas");
@@ -109,9 +107,7 @@ public class Lab3_DavidZavala_RonalZuniga {
                         System.out.print("Opcion: ");
                         char oop = read.next().toUpperCase().charAt(0);
                         switch (oop) {
-                            case 'A':
-                            case 'C':
-                            case 'D':
+                            case 'A':{System.out.println("Agregar");System.out.println("Agregar");System.out.println("Agregar");System.out.println("x. Atras");}
                             case 'X':
                             default:
                         }
