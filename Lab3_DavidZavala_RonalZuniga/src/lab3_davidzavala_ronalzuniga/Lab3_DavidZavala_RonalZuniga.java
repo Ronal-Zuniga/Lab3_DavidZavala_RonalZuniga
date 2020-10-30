@@ -128,11 +128,9 @@ public class Lab3_DavidZavala_RonalZuniga {
         }
     }
 
-    static void Print(ArrayList<Productos> array) {
+    static void Print(ArrayList array) {
         for (int i = 0; i < array.size(); i++) {
-            if (array.get(i) instanceof Ropa || array.get(i) instanceof Juguetes ) {
             System.out.println("[" + i + "] {{" + array.get(i) + "}");
-            }
         }
     }
 

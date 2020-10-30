@@ -24,8 +24,8 @@ public class Tienda extends Local {
         int ger = read.nextInt();
         return new Tienda(Nombre, emp.get(ger));
     }
-    
-    public void TiendaMod(Tienda store, ArrayList<Empleado> emp){
+
+    public void TiendaMod(Tienda store, ArrayList<Empleado> emp) {
         System.out.println("Nombre");
         String Nombre = read.next();
         Print(emp);
@@ -34,48 +34,51 @@ public class Tienda extends Local {
         store.setNombre(Nombre);
         store.setGerente(emp.get(ger));
     }
-    
-    public void TiendaAddEmp(Tienda store, ArrayList<Empleado> emp){
+
+    public void TiendaAddEmp(Tienda store, ArrayList<Empleado> emp) {
         boolean tf = true;
-        while (tf==true) {            
+        while (tf == true) {
             Print(emp);
             System.out.println("Elija  un Empleado");
             int op = read.nextInt();
             store.getEmpleados().add(emp.get(op));
             System.out.println("Desea agregar otro empleado?[S/N]");
             char sn = read.next().toLowerCase().charAt(0);
-            if (sn=='n') {
+            if (sn == 'n') {
                 tf = false;
             }
         }
     }
-    
-    public void TiendaAddPro(Tienda store, ArrayList<Productos> pro){
+
+    public void TiendaAddPro(Tienda store, ArrayList<Productos> pro) {
         boolean tf = true;
-        while (tf==true) {            
+        while (tf == true) {
             Print(pro);
             System.out.println("Elija un Producto");
             int op = read.nextInt();
             store.getProductos().add(pro.get(op));
             System.out.println("Desea agregar otro Producto?[S/N]");
             char sn = read.next().toLowerCase().charAt(0);
-            if (sn=='n') {
+            if (sn == 'n') {
                 tf = false;
             }
         }
     }
-    
-    public void TiendeDel(ArrayList<Tienda> array){
+
+    public void TiendeDel(ArrayList<Tienda> array) {
         for (int i = 0; i < array.size(); i++) {
             System.out.println("[" + i + "] {{" + array.get(i) + "}");
         }
         System.out.println("Elija la tienda a ser eliminada: ");
         int op = read.nextInt();
-        if (op<0||op>array.size()) {
-        array.remove(array.get(op));
+        if (op < 0 || op > array.size()) {
+            
+        }else{
+            array.remove(array.get(op));
         }
+        
     }
-    
+
     static void Print(ArrayList array) {
         for (int i = 0; i < array.size(); i++) {
             System.out.println("[" + i + "] {{" + array.get(i) + "}");
