@@ -6,12 +6,22 @@ import java.util.Scanner;
 public class Lab3_DavidZavala_RonalZuniga {
 
     static Scanner read = new Scanner(System.in);
+    
+    //Clases instanceadas
+    static Cliente C = new Cliente();
+    //Araylists
+    static ArrayList<String> Usuarios = new ArrayList();
     static ArrayList<Local> LocalesAL = new ArrayList();
+    static ArrayList<Empleado> EmpleadosAL = new ArrayList();
+    static ArrayList<Cliente> ClientesAL = new ArrayList();
 
     public static void main(String[] args) {
         boolean Flag = true;
         boolean Login = false;
         boolean Sudo = false;
+        Cliente cliente = null;
+        String Usuario = null;
+        String Contraseña = null;
         while (Flag == true) {
             System.out.println("Equipo Dinavodka");
             System.out.println("1. Log in");
@@ -24,15 +34,22 @@ public class Lab3_DavidZavala_RonalZuniga {
             switch (op) {
                 case 1: {
                     System.out.println("Usuario:");
-                    String Usuario = read.next();
+                    Usuario = read.next();
                     System.out.println("Contraseña:");
-                    String Contraseña = read.next();
+                    Contraseña = read.next();
                     if (Usuario.equals("SUDO") && Contraseña.equals("")) {
                         Sudo = true;
+                        System.out.println("Administrador autenticado");
                     } else if (Usuario.equals("SUDO") && Contraseña.equals("")) { // modificar para las personas normales
+                        for (int i = 0; i < ClientesAL.size(); i++) {
+                            if (ClientesAL.get(i).getUser().equals(Usuario) && ClientesAL.get(i).getPassword().equals(Contraseña)) {
+                                cliente = ClientesAL.get(i);
+                            }
+                        }
                         Login = true;
+                        System.out.println("Usuario autenticado");
                     } else {
-                        System.out.println("Perfil inexistente intentelo de nuevo");
+                        System.out.println("Perfil inexistente Ultimo intento");
                         System.out.println("Usuario:");
                         Usuario = read.next();
                         System.out.println("Contraseña:");
@@ -41,7 +58,7 @@ public class Lab3_DavidZavala_RonalZuniga {
                     break;
                 }
                 case 2: {
-
+                    ClientesAL.add(C.Clientesadd());
                     break;
                 }
                 case 3: {
@@ -58,14 +75,28 @@ public class Lab3_DavidZavala_RonalZuniga {
                             if (Aop < 0 || Aop > LocalesAL.size()) {
                                 System.out.println("Opción inválida");
                             } else {
-                                
+                                if (cliente.getDinero() >= LocalesAL.get(oop).getProductos().get(Aop).getPrecio()) {
+                                    cliente.setDinero(cliente.getDinero() - LocalesAL.get(oop).getProductos().get(Aop).getPrecio());
+                                    cliente.getProductos().add(LocalesAL.get(oop).getProductos().get(Aop));
+                                } else {
+                                    System.out.println("Dinero insuficiente.");
+                                }
                             }
                         }
                     }
                     break;
                 }
                 case 4: {
-
+                    if (Login == true) {
+                        for (int i = 0; i < ClientesAL.size(); i++) {
+                            if (ClientesAL.get(i).getUser().equals(Usuario) && ClientesAL.get(i).getPassword().equals(Contraseña)) {
+                                ClientesAL.get(i).setDinero(cliente.getDinero());
+                                ClientesAL.get(i).setProductos(cliente.getProductos());
+                            }
+                        }
+                    } else {
+                        System.out.println("Compelte login antes");
+                    }
                     break;
                 }
                 case 5: {
