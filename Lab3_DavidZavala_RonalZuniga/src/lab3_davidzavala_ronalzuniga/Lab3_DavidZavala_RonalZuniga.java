@@ -13,6 +13,7 @@ public class Lab3_DavidZavala_RonalZuniga {
     static ArrayList<Local> LocalesAL = new ArrayList();
     static ArrayList<Empleado> EmpleadosAL = new ArrayList();
     static ArrayList<Cliente> ClientesAL = new ArrayList();
+    static ArrayList<Productos> ProductoAL = new ArrayList();
 
     public static void main(String[] args) {
         boolean Flag = true;
@@ -127,9 +128,11 @@ public class Lab3_DavidZavala_RonalZuniga {
         }
     }
 
-    static void Print(ArrayList array) {
+    static void Print(ArrayList<Productos> array) {
         for (int i = 0; i < array.size(); i++) {
+            if (array.get(i) instanceof Ropa || array.get(i) instanceof Juguetes ) {
             System.out.println("[" + i + "] {{" + array.get(i) + "}");
+            }
         }
     }
 
