@@ -66,7 +66,7 @@ public class Juguetes extends Productos{
         for (int i = 0; i < j.size(); i++) {
             System.out.println("[" + i + "] {{" + j.get(i) + "}");
         }
-        System.out.println("Prenda a eliminar: ");
+        System.out.println("Juguete a eliminar: ");
         int p = read.nextInt();
         if (p < 0 || p > j.size()) {
             System.out.println("Posicion fuera de rango");

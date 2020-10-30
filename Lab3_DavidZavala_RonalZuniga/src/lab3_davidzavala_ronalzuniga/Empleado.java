@@ -91,7 +91,7 @@ public class Empleado extends Persona{
         for (int i = 0; i < e.size(); i++) {
             System.out.println("[" + i + "] {{" + e.get(i) + "}");
         }
-        System.out.println("Prenda a eliminar: ");
+        System.out.println("Empleado a eliminar: ");
         int p = read.nextInt();
         if (p < 0 || p > e.size()) {
             System.out.println("Posicion fuera de rango");

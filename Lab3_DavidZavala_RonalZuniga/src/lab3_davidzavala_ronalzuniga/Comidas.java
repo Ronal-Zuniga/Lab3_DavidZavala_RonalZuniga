@@ -132,7 +132,7 @@ public class Comidas extends Productos {
         for (int i = 0; i < c.size(); i++) {
             System.out.println("[" + i + "] {{" + c.get(i) + "}");
         }
-        System.out.println("Prenda a eliminar: ");
+        System.out.println("Comida a eliminar: ");
         int p = read.nextInt();
         if (p < 0 || p > c.size()) {
             System.out.println("Posicion fuera de rango");

@@ -84,7 +84,7 @@ public class Cliente extends Persona {
         for (int i = 0; i < c.size(); i++) {
             System.out.println("[" + i + "] {{" + c.get(i) + "}");
         }
-        System.out.println("Prenda a eliminar: ");
+        System.out.println("Cliente a eliminar: ");
         int p = read.nextInt();
         if (p < 0 || p > c.size()) {
             System.out.println("Posicion fuera de rango");
