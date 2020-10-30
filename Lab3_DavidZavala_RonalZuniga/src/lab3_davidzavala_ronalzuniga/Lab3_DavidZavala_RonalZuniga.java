@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Lab3_DavidZavala_RonalZuniga {
 
     static Scanner read = new Scanner(System.in);
+    static ArrayList<Local> LocalesAL = new ArrayList();
 
     public static void main(String[] args) {
         boolean Flag = true;
@@ -40,19 +41,35 @@ public class Lab3_DavidZavala_RonalZuniga {
                     break;
                 }
                 case 2: {
-                    
+
                     break;
                 }
                 case 3: {
-                    
+                    if (Login == true) {
+                        Print(LocalesAL);
+                        System.out.print("Elija un local: ");
+                        int oop = read.nextInt();
+                        if (oop < 0 || oop > LocalesAL.size()) {
+                            System.out.println("Opción inválida");
+                        } else {
+                            Print(LocalesAL.get(oop).getProductos());
+                            System.out.print("Producto a comprar: ");
+                            int Aop = read.nextInt();
+                            if (Aop < 0 || Aop > LocalesAL.size()) {
+                                System.out.println("Opción inválida");
+                            } else {
+                                
+                            }
+                        }
+                    }
                     break;
                 }
                 case 4: {
-                    
+
                     break;
                 }
                 case 5: {
-                    
+
                     if (Sudo == true) {
                         System.out.println("A. Locales");
                         System.out.println("B. Personas");
@@ -60,14 +77,14 @@ public class Lab3_DavidZavala_RonalZuniga {
                         System.out.println("X. Atrás");
                         System.out.print("Opcion: ");
                         char oop = read.next().toUpperCase().charAt(0);
-                        switch (oop){
+                        switch (oop) {
                             case 'A':
                             case 'C':
                             case 'D':
                             case 'X':
-                            default :
+                            default:
                         }
-                    }else{
+                    } else {
                         System.out.println("Credenciales necesarias");
                     }
                     break;
