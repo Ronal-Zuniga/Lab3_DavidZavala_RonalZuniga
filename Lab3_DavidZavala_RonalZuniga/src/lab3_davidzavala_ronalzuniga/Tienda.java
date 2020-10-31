@@ -65,7 +65,7 @@ public class Tienda extends Local {
         }
     }
 
-    public void TiendeDel(ArrayList<Tienda> array) {
+    public void TiendeDel(ArrayList array) {
         for (int i = 0; i < array.size(); i++) {
             System.out.println("[" + i + "] {{" + array.get(i) + "}");
         }

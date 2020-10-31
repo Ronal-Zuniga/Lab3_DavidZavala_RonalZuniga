@@ -43,7 +43,7 @@ public class Kiosco extends Tienda {
         store.setGerente(emp.get(ger));
     }
     
-    public void KioscoDel(ArrayList<Kiosco> array) {
+    public void KioscoDel(ArrayList array) {
         for (int i = 0; i < array.size(); i++) {
             System.out.println("[" + i + "] {{" + array.get(i) + "}");
         }

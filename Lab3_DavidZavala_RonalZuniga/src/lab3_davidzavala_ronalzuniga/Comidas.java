@@ -128,7 +128,7 @@ public class Comidas extends Productos {
         c.setTipo(tipo);
     }
 
-    public void Comidasdel(ArrayList<Comidas> c){
+    public void Comidasdel(ArrayList c){
         for (int i = 0; i < c.size(); i++) {
             System.out.println("[" + i + "] {{" + c.get(i) + "}");
         }

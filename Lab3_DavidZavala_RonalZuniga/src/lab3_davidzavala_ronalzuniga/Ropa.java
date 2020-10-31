@@ -173,7 +173,7 @@ public class Ropa extends Productos {
         r.setTalla(size);
     }
 
-    public void Ropadel(ArrayList<Ropa> r) {
+    public void Ropadel(ArrayList r) {
         for (int i = 0; i < r.size(); i++) {
             System.out.println("[" + i + "] {{" + r.get(i) + "}");
         }

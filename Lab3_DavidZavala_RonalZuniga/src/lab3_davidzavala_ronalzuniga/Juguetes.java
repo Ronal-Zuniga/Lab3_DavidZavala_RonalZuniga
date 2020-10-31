@@ -62,7 +62,7 @@ public class Juguetes extends Productos{
         j.setPrecio(precio);
     }
     
-    public void Juguetesdel(ArrayList<Juguetes> j){
+    public void Juguetesdel(ArrayList j){
         for (int i = 0; i < j.size(); i++) {
             System.out.println("[" + i + "] {{" + j.get(i) + "}");
         }

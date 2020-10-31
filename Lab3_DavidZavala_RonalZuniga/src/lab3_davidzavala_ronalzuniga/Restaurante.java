@@ -61,7 +61,7 @@ public class Restaurante extends Local {
         r.setGerente(emp.get(ger));
     }
     
-    public void Restdel(ArrayList<Restaurante> r){
+    public void Restdel(ArrayList r){
         Print(r);
         System.out.println("Elija el restaurante a ser eliminado: ");
         int op = read.nextInt();
